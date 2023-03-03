@@ -32,7 +32,7 @@ params["marker"] = markerLoc;
 try{
 var savedInitialZoom = localStorage.getItem("mapZoom");
 }catch{}
-var initialZoom = 3;
+var initialZoom = 7;
 if (savedInitialZoom)
     initialZoom = parseInt(savedInitialZoom);
 params["zoom"] = initialZoom;
@@ -45,7 +45,7 @@ function loadMap()
     map = L.map('mapContainer',
     {
         minZoom: 3,
-        maxZoom: 3,
+        maxZoom: 7,
         click: true,
         attributionControl: false,
         radioButtons: true,
