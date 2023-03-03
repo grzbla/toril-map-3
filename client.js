@@ -54,8 +54,8 @@ function loadMap()
     });
 
     hand = L.icon({
-        iconUrl: 'map/assets/icons/hand.png',
-        shadowUrl: 'map/assets/icons/hand_shadow.png',
+        iconUrl: 'assets/ui/pointers/hand.png',
+        // shadowUrl: 'assets/icons/hand_shadow.png',
 
         iconSize:     [100, 50], // size of the icon
         shadowSize:   [100, 50], // size of the shadow
