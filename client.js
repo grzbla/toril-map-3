@@ -82,12 +82,12 @@ function loadMap()
         params["loc"] = [center.lat, center.lng];
         try{
         localStorage.setItem("mapLoc", JSON.stringify(params["loc"]));
-        }catch{
+        }catch{}
 
         params["zoom"] = map.getZoom();
         try{
         localStorage.setItem("mapZoom", params["zoom"]);
-        }catch{
+        }catch{}
         setHash();
     });
 
