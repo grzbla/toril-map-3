@@ -32,7 +32,7 @@ params["marker"] = markerLoc;
 try{
 var savedInitialZoom = localStorage.getItem("mapZoom");
 }catch{}
-var initialZoom = 7;
+var initialZoom = 3;
 if (savedInitialZoom)
     initialZoom = parseInt(savedInitialZoom);
 params["zoom"] = initialZoom;
@@ -69,7 +69,9 @@ function loadMap()
     map.on("click", function(event)
     {
         markerLoc = [event.latlng.lat, event.latlng.lng];
+        try{
         localStorage.setItem("markerLoc", JSON.stringify(markerLoc));
+        }catch{}
         removeMarker(); setMarker(); setHash();
     });
 
@@ -78,14 +80,18 @@ function loadMap()
     {
         var center = map.getCenter();
         params["loc"] = [center.lat, center.lng];
+        try{
         localStorage.setItem("mapLoc", JSON.stringify(params["loc"]));
+        }catch{
 
         params["zoom"] = map.getZoom();
+        try{
         localStorage.setItem("mapZoom", params["zoom"]);
+        }catch{
         setHash();
     });
 
-    positron = L.tileLayer("http://" + window.location.origin + window.location.pathname + '{z}/{x}/{y}.png').addTo(map);
+    positron = L.tileLayer("http://" + window.location.origin + window.location.pathname + '/{z}/{x}/{y}.png').addTo(map);
 
     if (window.location.hash.length > 0)
     {
