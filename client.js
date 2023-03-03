@@ -85,7 +85,7 @@ function loadMap()
         setHash();
     });
 
-    positron = L.tileLayer("http://" + window.location.host + '/{z}/{x}/{y}.png').addTo(map);
+    positron = L.tileLayer("http://" + window.location.origin + window.location.pathname + '{z}/{x}/{y}.png').addTo(map);
 
     if (window.location.hash.length > 0)
     {
